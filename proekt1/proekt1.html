@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Explorer – London</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="proekt1.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">City Explorer – London</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#home">Почетна</a></li>
+                <li class="nav-item"><a class="nav-link" href="#gallery">Галерија</a></li>
+                <li class="nav-item"><a class="nav-link" href="#blog">Блог</a></li>
+                <li class="nav-item"><a class="nav-link" href="#survey">Анкета</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="modal fade" id="loginModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">Најави се</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <form id="loginForm">
+                    <div class="mb-3">
+                        <label class="form-label">E-mail адреса</label>
+                        <input type="email" class="form-control" id="emailInput" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Лозинка</label>
+                        <input type="password" class="form-control" id="passwordInput" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">Најави се</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<header id="home">
+    <div class="header-content text-center text-white">
+        <h1>Добредојдовте во Лондон!</h1>
+        <p>Истражете ги најпопуларните места: Биг Бен, Лондонско Око, Тауер Бридџ и други.</p>
+        
+    </div>
+</header>
+<section id="gallery" class="container-fluid">
+    <h2 class="mb-4 text-center">Галерија</h2>
+    <div class="row">
+
+        <div class="col-md-4 mb-4">
+            <img src="slika1.jpg" alt="Биг Бен" class="img-fluid rounded">
+            <h5 class="mt-2 text-center">Биг Бен</h5>
+
+            <div class="actions mt-2">
+                <button class="btn btn-success like-btn">👍</button>
+                <span class="like-count">0</span>
+
+                <button class="btn btn-danger dislike-btn">👎</button>
+                <span class="dislike-count">0</span>
+            </div>
+
+            <div class="comment-box mt-2">
+                <input type="text" class="form-control comment-input" placeholder="Остави коментар">
+                <button class="btn btn-primary btn-sm mt-1 comment-btn">Коментирај</button>
+                <ul class="list-group mt-2 comments-list"></ul>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <img src="slika2.jpg" alt="Лондонслата кула" class="img-fluid rounded">
+            <h5 class="mt-2 text-center">Лондонската кула</h5>
+            <div class="actions mt-2">
+                <button class="btn btn-success like-btn">👍</button>
+                <span class="like-count">0</span>
+                <button class="btn btn-danger dislike-btn">👎</button>
+                <span class="dislike-count">0</span>
+            </div>
+            <div class="comment-box mt-2">
+                <input type="text" class="form-control comment-input" placeholder="Остави коментар">
+                <button class="btn btn-primary btn-sm mt-1 comment-btn">Коментирај</button>
+                <ul class="list-group mt-2 comments-list"></ul>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <img src="slika3.jpg" alt="Westminster Abbey" class="img-fluid rounded">
+            <h5 class="mt-2 text-center">Westminster Abbey</h5>
+            <div class="actions mt-2">
+                <button class="btn btn-success like-btn">👍</button>
+                <span class="like-count">0</span>
+                <button class="btn btn-danger dislike-btn">👎</button>
+                <span class="dislike-count">0</span>
+            </div>
+            <div class="comment-box mt-2">
+                <input type="text" class="form-control comment-input" placeholder="Остави коментар">
+                <button class="btn btn-primary btn-sm mt-1 comment-btn">Коментирај</button>
+                <ul class="list-group mt-2 comments-list"></ul>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <img src="slika4.jpg" alt="London Eye" class="img-fluid rounded">
+            <h5 class="mt-2 text-center">Лондонското Око</h5>
+            <div class="actions mt-2">
+                <button class="btn btn-success like-btn">👍</button>
+                <span class="like-count">0</span>
+                <button class="btn btn-danger dislike-btn">👎</button>
+                <span class="dislike-count">0</span>
+            </div>
+            <div class="comment-box mt-2">
+                <input type="text" class="form-control comment-input" placeholder="Остави коментар">
+                <button class="btn btn-primary btn-sm mt-1 comment-btn">Коментирај</button>
+                <ul class="list-group mt-2 comments-list"></ul>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <img src="slika5.jpg" alt="Бакингхем Палата" class="img-fluid rounded">
+            <h5 class="mt-2 text-center">Бакингхем Палата</h5>
+            <div class="actions mt-2">
+                <button class="btn btn-success like-btn">👍</button>
+                <span class="like-count">0</span>
+                <button class="btn btn-danger dislike-btn">👎</button>
+                <span class="dislike-count">0</span>
+            </div>
+            <div class="comment-box mt-2">
+                <input type="text" class="form-control comment-input" placeholder="Остави коментар">
+                <button class="btn btn-primary btn-sm mt-1 comment-btn">Коментирај</button>
+                <ul class="list-group mt-2 comments-list"></ul>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <img src="slika6.jpg" alt="Катедрала Свети Пол" class="img-fluid rounded">
+            <h5 class="mt-2 text-center">Катедрала Свети Пол</h5>
+            <div class="actions mt-2">
+                <button class="btn btn-success like-btn">👍</button>
+                <span class="like-count">0</span>
+                <button class="btn btn-danger dislike-btn">👎</button>
+                <span class="dislike-count">0</span>
+            </div>
+            <div class="comment-box mt-2">
+                <input type="text" class="form-control comment-input" placeholder="Остави коментар">
+                <button class="btn btn-primary btn-sm mt-1 comment-btn">Коментирај</button>
+                <ul class="list-group mt-2 comments-list"></ul>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <img src="slika7.jpg" alt="Тауер Бридџ" class="img-fluid rounded">
+            <h5 class="mt-2 text-center">Тауер Бридџ</h5>
+            <div class="actions mt-2">
+                <button class="btn btn-success like-btn">👍</button>
+                <span class="like-count">0</span>
+                <button class="btn btn-danger dislike-btn">👎</button>
+                <span class="dislike-count">0</span>
+            </div>
+            <div class="comment-box mt-2">
+                <input type="text" class="form-control comment-input" placeholder="Остави коментар">
+                <button class="btn btn-primary btn-sm mt-1 comment-btn">Коментирај</button>
+                <ul class="list-group mt-2 comments-list"></ul>
+            </div>
+        </div>
+
+         <div class="col-md-4 mb-4">
+            <img src="slika8.jpg" alt="Куќите на Парламент" class="img-fluid rounded">
+            <h5 class="mt-2 text-center">Куќите на Парламент</h5>
+            <div class="actions mt-2">
+                <button class="btn btn-success like-btn">👍</button>
+                <span class="like-count">0</span>
+                <button class="btn btn-danger dislike-btn">👎</button>
+                <span class="dislike-count">0</span>
+            </div>
+            <div class="comment-box mt-2">
+                <input type="text" class="form-control comment-input" placeholder="Остави коментар">
+                <button class="btn btn-primary btn-sm mt-1 comment-btn">Коментирај</button>
+                <ul class="list-group mt-2 comments-list"></ul>
+            </div>
+        </div>
+
+         <div class="col-md-4 mb-4">
+            <img src="slika9.jpg" alt="Темза" class="img-fluid rounded">
+            <h5 class="mt-2 text-center">Темза</h5>
+            <div class="actions mt-2">
+                <button class="btn btn-success like-btn">👍</button>
+                <span class="like-count">0</span>
+                <button class="btn btn-danger dislike-btn">👎</button>
+                <span class="dislike-count">0</span>
+            </div>
+            <div class="comment-box mt-2">
+                <input type="text" class="form-control comment-input" placeholder="Остави коментар">
+                <button class="btn btn-primary btn-sm mt-1 comment-btn">Коментирај</button>
+                <ul class="list-group mt-2 comments-list"></ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="blog" class="container-fluid">
+  <h2 class="mb-4 text-center">Блог — London Stories</h2>
+
+  <div class="row mb-4">
+    <div class="col-md-8">
+      <div class="mb-3">
+        <input id="blog-search" type="search" class="form-control" placeholder="Пребарај статии (напр. 'музеј', 'совет')">
+      </div>
+
+ 
+      <div id="articles" class="list-group">
+    
+        <article class="list-group-item article" data-title="Историја и тајни на Биг Бен">
+          <div class="d-flex">
+            <img src="slika1.jpg" alt="Биг Бен" class="me-3 img-thumbnail" style="width:140px; height:100px; object-fit:cover;">
+            <div>
+              <h5>Историја и тајни на Биг Бен</h5>
+              <p class="excerpt mb-1">
+                Биг Бен е едно од најпознатите обележја на Лондон — часовник и кула кои стојат како симбол на градот. Во оваа статија прочитајте интересни факти за една од најпознатите обележја во Лондон...
+              </p>
+              <p class="full-text d-none">
+                Полна статија: Биг Бен е еден од најпознатите светски симболи и главна туристичка атракција на Лондон. Иако често се користи за целата кула, вистинскиот „Биг Бен“ е името на големото ѕвоно кое се наоѓа во нејзиниот внатрешен простор. Кулата сама официјално се вика Елизабет Тауер (Elizabeth Tower) и е дел од Палатата Вестминстер, седиштето на британскиот Парламент.
+              </p>
+              <button class="btn btn-link p-0 read-more-btn">Повеќе...</button>
+            </div>
+          </div>
+          <div class="mt-2 text-muted small">Автор: Марк | 12 април 2025</div>
+        </article>
+
+        
+        <article class="list-group-item article" data-title="Музеите кои мора да ги посетите">
+          <div class="d-flex">
+            <img src="british_museum.jpg" alt="British Museum" class="me-3 img-thumbnail" style="width:140px; height:100px; object-fit:cover;">
+            <div>
+              <h5>Музеите кои мора да ги посетите</h5>
+              <p class="excerpt mb-1">
+                British Museum, Tate Modern и Victoria & Albert — Лондон има неколку светски музеи кои нудат бесплатен влез и огромни колекции.
+              </p>
+              <p class="full-text d-none">
+                Полна статија: British Museum – антички артефакти; Tate Modern – модерно и контемпорано; V&A – уметност и дизајн. Секој има свои „periods“ и must-see експонати. Најдобро време за посета: среда попладне или рано сабајле.
+              </p>
+              <button class="btn btn-link p-0 read-more-btn">Повеќе...</button>
+            </div>
+          </div>
+          <div class="mt-2 text-muted small">Автор: Елена | 28 март 2025</div>
+        </article>
+
+        <article class="list-group-item article" data-title="Локални совети: храна, превоз и евтини активности">
+          <div class="d-flex">
+            <img src="camden.jpg" alt="Camden Market" class="me-3 img-thumbnail" style="width:140px; height:100px; object-fit:cover;">
+            <div>
+              <h5>Локални совети: храна, превоз и евтини активности</h5>
+              <p class="excerpt mb-1">
+                Каде да јадете буџетски и кои активности се бесплатни — сè што ти треба за паметно патување.
+              </p>
+              <p class="full-text d-none">
+                Полна статија: Лондон е динамичен град кој нуди неверојатни културни искуства, историја и забави, но може да биде скап. Добрата вест е дека со малку планирање можете да уживате во градот без да го оптоварите вашиот буџет.
+
+1. Каде да јадете буџетски
+
+Лондон има богата гастрономска сцена, а многу од најинтересните опции не се скапи:
+
+Street Food Markets – пазари како Camden Market, Borough Market и Brick Lane се идеални за вкусна и достапна храна. Тука можете да пробате локални специјалитети, азиска храна, вегетаријански и вегански опции за £5-£10.
+
+Chain Cafés и пекарници – места како Pret a Manger, Greggs или EAT нудат сендвичи, супи и закуски по разумни цени.
+
+Ethnic food – Лондон е мултикултурен град: потражете индиски, пакистански или каријански ресторани во региони како Southall за оброци за £7-£12.
+
+Supermarket deals – Tesco, Sainsbury’s или Marks & Spencer имаат „meal deal“ понуди (салата + сендвич + пијалак) за околу £5.
+
+Пабови со дневни понуди – многу пабови нудат „lunch specials“ кои вклучуваат основен оброк за £10 или помалку.
+
+2. Превоз и паметни совети
+
+Oyster card или Contactless payment – користете Oyster картичка или безконтактна плаќање за автобуси и метро. Цените се многу поевтини од купување билет по возење.
+
+Бесплатни автобуси и прошетки – во некои делови на Лондон има бесплатни автобуси, а пешачењето низ градот е одличен начин да се запознаете со улиците и знаменитостите.
+
+Walking tours и бесплатни водичи – многу организации нудат бесплатни пешачки тури, а на интернет може да најдете мапи и apps со интересни маршрути.
+
+3. Бесплатни активности
+
+Лондон е богат со активности кои не чинат ништо, а се одличен начин да се запознаете со културата и историјата:
+
+Музеи – British Museum, National Gallery, Tate Modern, Victoria & Albert Museum се бесплатни за влез и имаат светски познати колекции.
+
+Паркови – Hyde Park, Regent’s Park, St James’s Park и Greenwich Park нудат мир, разходки и места за пикник.
+
+Историски споменици и архитектура – Westminster Abbey (надворешно разгледување), Buckingham Palace, Tower Bridge, St Paul’s Cathedral (надвор) се достапни без билет.
+
+Река Темза – прошетка по South Bank нуди поглед на London Eye, Globe Theatre и многу улици со улични артисти и музика.
+
+Улични пазари – Camden, Portobello, Columbia Road (за цвеќиња) и Borough Market се одлични за прошетка, разгледување и уживање во локалната атмосфера.
+
+Галерии и изложби – многу современи галерии, како Saatchi Gallery, имаат бесплатен влез.
+              </p>
+              <button class="btn btn-link p-0 read-more-btn">Повеќе...</button>
+            </div>
+          </div>
+          <div class="mt-2 text-muted small">Автор: Алекс | 05 февруари 2025</div>
+        </article>
+      </div>
+    </div>
+
+    <aside class="col-md-4">
+      <div class="card mb-3">
+        <div class="card-header">
+          10 работи што мора да ги видите во Лондон
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">1. Биг Бен и Palace of Westminster</li>
+          <li class="list-group-item">2. London Eye</li>
+          <li class="list-group-item">3. Tower of London</li>
+          <li class="list-group-item">4. Tower Bridge</li>
+          <li class="list-group-item">5. Buckingham Palace</li>
+          <li class="list-group-item">6. Westminster Abbey</li>
+          <li class="list-group-item">7. British Museum</li>
+          <li class="list-group-item">8. Tate Modern</li>
+          <li class="list-group-item">9. St Paul's Cathedral</li>
+          <li class="list-group-item">10. Camden Market (или проголтај вечерта во Soho)</li>
+        </ul>
+      </div>
+
+      <div class="card mb-3">
+        <div class="card-body">
+          <h6>Совет за слики</h6>
+          <p class="small mb-0">За најдобри фотографии: дојди рано наутро, користи portrait mode за портрети и држи стабилност при low-light. Златниот час е магичен!</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h6>Тагови</h6>
+          <div>
+            <span class="badge bg-secondary me-1 mb-1">музеи</span>
+            <span class="badge bg-secondary me-1 mb-1">фотографија</span>
+            <span class="badge bg-secondary me-1 mb-1">храна</span>
+            <span class="badge bg-secondary me-1 mb-1">совети</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section id="survey" class="container-fluid">
+    <h2 class="mb-4 text-center">Анкета – Вашите впечатоци за Лондон</h2>
+    <form id="survey-form">
+        <div class="mb-3">
+            <label for="name" class="form-label">Име:</label>
+            <input type="text" class="form-control" id="name" placeholder="Внесете го вашето име" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Возраст:</label>
+            <select class="form-select" id="age-range" required>
+                <option value="" disabled selected>Изберете возраст</option>
+                <option value="Under 18">Под 18</option>
+                <option value="18-30">18-30</option>
+                <option value="31-50">31-50</option>
+                <option value="51+">51+ години</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Какви се вашите впечатоци за Лондон?</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="impression" id="Многу Добро" value="Многу добро" required>
+                <label class="form-check-label" for="Многу Добро">Многу добро</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="impression" id="Средно" value="Средно">
+                <label class="form-check-label" for="Средно">Средно</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="impression" id="Лошо" value="Лошо">
+                <label class="form-check-label" for="Лошо">Лошо</label>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Што најмногу ви се допадна?</label>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="sightseeing" value="Sightseeing">
+                <label class="form-check-label" for="sightseeing">Sightseeing</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="food" value="Food">
+                <label class="form-check-label" for="food">Храна</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="museums" value="Museums">
+                <label class="form-check-label" for="museums">Музеи</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="parks" value="Parks">
+                <label class="form-check-label" for="parks">Парк и природа</label>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Колку лесно беше да се движите низ градот</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="mobility" id="Easy" value="Лесно" required>
+                    <label class="form-check-label" for="Easy">Лесно</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="mobility" id="Medium" value="Средно">
+                    <label class="form-check-label" for="Medium">Средно</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="mobility" id="Hard" value="Тешко">
+                    <label class="form-check-label" for="Hard">Тешко</label>
+                </div>
+            </div> 
+        <div class="mb-3">
+            <label class="form-label">Колку време бевте во Лондон?</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="duration" id="1-2 days" value="1-2 days" required>
+                <label class="form-check-label" for="1-2 days">1-2 дена</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="duration" id="3-5 days" value="3-5 days">
+                <label class="form-check-label" for="3-5 days">3-5 дена</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="duration" id="1 week" value="1 week">
+                <label class="form-check-label" for="1 week">Околу 1 недела</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="duration" id="more than week" value="more than week">
+                <label class="form-check-label" for="more than week">Повеќе од една недела</label>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="comments" class="form-label">Дополнителни впечатоци / коментари:</label>
+            <textarea class="form-control" id="comments" rows="3" placeholder="Внесете коментар"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Испрати</button>
+    </form>
+    <div id="survey-results" class="mt-4 p-3 border rounded bg-light"></div>
+</section>
+
+
+<footer class="text-center text-white py-3">
+    <p>&copy; 2025 City Explorer – London | Сите права задржани</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="proekt1.js"></script>
+</body>
+</html>

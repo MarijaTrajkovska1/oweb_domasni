@@ -1,0 +1,190 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+section {
+    margin: 0;
+    padding: 0; 
+}
+header {
+    height: 100vh; 
+    background: url('big-ben-clock.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 4rem;
+    color:whitesmoke;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+}
+header p{
+    font-size: 1.5rem; 
+    color: whitesmoke;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+.navbar {
+    background-color: black !important; 
+}
+
+.navbar .navbar-brand {
+    color: whitesmoke !important; 
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar .nav-link {
+    color: whitesmoke !important;
+    margin-left: 10px;
+}
+
+.navbar .nav-link:hover {
+    color: whitesmoke!important;
+}
+
+#gallery {
+    background-color: lightblue; 
+    padding: 60px 30px;
+}
+
+#gallery img {
+    border-radius: 15px; 
+    transition: transform 0.3s ease;
+}
+
+#gallery img:hover {
+    transform: scale(1.05);
+}
+
+#gallery .like-btn {
+    background-color: lightgreen; 
+    color: white;
+    border: none;
+}
+
+#gallery .like-btn:hover {
+    background-color: lightgreen;
+}
+
+#gallery .dislike-btn {
+    background-color: maroon; 
+    color: white;
+    border: none;
+}
+
+#gallery .dislike-btn:hover {
+    background-color: maroon;
+}
+
+#gallery .comment-btn {
+    background-color: slategray;
+    color: white;
+    border: none;
+}
+
+#gallery .comment-btn:hover {
+    background-color: slategray;
+}
+
+#gallery .comment-input {
+    margin-bottom: 5px;
+}
+
+#gallery .comment-list li {
+    background-color: #ffffff;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+#blog #blog-search {
+    background-color: rgba(147, 183, 224, 0.9); 
+    color: #000; 
+    border: 2px solid navy;
+    border-radius: 10px;
+    padding: 10px 15px;
+}
+#blog #blog-search::placeholder {
+    color: lightgray; 
+}
+#blog aside .card {
+    background-color: rgba(147, 183, 224, 0.9); /* сина боја со транспарентност */
+    color:black; 
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    margin-bottom: 20px;
+}
+
+#blog aside .card-header {
+    background-color: rgba(147, 183, 224, 0.9); /* темно сина */
+    color:black;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#blog aside .card-body {
+    background-color: rgba(147,183,224,0.9);
+    color: black;
+}
+#blog {
+    background-image: url('flag.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 50px 20px;
+    color:black; 
+}
+#survey {
+    background-color: #c02626; 
+    color: white; 
+    padding: 40px 20px;
+}
+
+#survey h2 {
+    color: white;
+}
+#survey input[type="text"],
+#survey select,
+#survey textarea {
+    background-color: #001f3f; 
+    color: white; 
+    border: 1px solid #001f3f;
+}
+
+#survey input[type="text"]::placeholder,
+#survey textarea::placeholder {
+    color: #cccccc; 
+}
+
+#survey .form-check-label {
+    color: white;
+}
+
+#survey .form-check-input {
+    accent-color: #001f3f; 
+}
+#survey button[type="submit"] {
+    background-color: #001f3f;
+    border-color: #001f3f;
+    color: white;
+}
+
+#survey button[type="submit"]:hover {
+    background-color: #003366;
+    border-color: #003366;
+}
+
+#survey-results {
+    background-color: #330000; 
+    color: black;
+    border: 1px solid black;
+}
