@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  function filterTable() {
+    var imeVal = $("#imeInput").val().toLowerCase();
+    var prezimeVal = $("#prezimeInput").val().toLowerCase();
+    var emailVal = $("#emailInput").val().toLowerCase();
+
+    $("#myTable tr").filter(function() {
+      var imeTd = $(this).find("td:eq(0)").text().toLowerCase();
+      var prezimeTd = $(this).find("td:eq(1)").text().toLowerCase();
+      var emailTd = $(this).find("td:eq(2)").text().toLowerCase();
+
+      $(this).toggle(
+        imeTd.indexOf(imeVal) > -1 &&
+        prezimeTd.indexOf(prezimeVal) > -1 &&
+        emailTd.indexOf(emailVal) > -1
+      );
+    });
+  }
+
+  $("#imeInput, #prezimeInput, #emailInput").on("keyup", filterTable);
+});
+</script>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+input {
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 200px;
+}
+</style>
+</head>
+<body>
+
+<h2>Filterable Table</h2>
+<p>Type in the fields to search by first name, last name, or email:</p>  
+
+<input id="imeInput" type="text" placeholder="Search Firstname">
+<input id="prezimeInput" type="text" placeholder="Search Lastname">
+<input id="emailInput" type="text" placeholder="Search Email">
+<br><br>
+
+<table>
+  <thead>
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Email</th>
+  </tr>
+  </thead>
+  <tbody id="myTable">
+  <tr>
+    <td>John</td>
+    <td>Doe</td>
+    <td>john@example.com</td>
+  </tr>
+  <tr>
+    <td>Mary</td>
+    <td>Moe</td>
+    <td>mary@mail.com</td>
+  </tr>
+  <tr>
+    <td>July</td>
+    <td>Dooley</td>
+    <td>july@greatstuff.com</td>
+  </tr>
+  <tr>
+    <td>Anja</td>
+    <td>Ravendale</td>
+    <td>a_r@test.com</td>
+  </tr>
+  </tbody>
+</table>
+
+<p>Note that we filter by each column separately, so you can combine searches.</p>
+
+</body>
+</html>
+
+
+
+
