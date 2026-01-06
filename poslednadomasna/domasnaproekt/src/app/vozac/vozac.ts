@@ -9,12 +9,16 @@ import { shofer } from '../shofer';
 })
 export class Vozac {
   @Input()
-  motordzija:shofer | undefined;
+  ime:String="";
 
   @Input()
-  indeks:Number=0;
-
-  funk() {
-    console.log("Button Clicked");
+  motordzija:shofer | undefined;
+ 
+  funk(){
+    console.log("Me stisna");
   }
+
+  @Input()
+  index:number=0;
+
 }

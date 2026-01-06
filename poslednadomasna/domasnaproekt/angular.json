@@ -2,16 +2,17 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": "c9f28fe2-09c7-4854-a6ed-39a24ed18020"
   },
   "newProjectRoot": "projects",
   "projects": {
     "domasnaproekt": {
       "projectType": "application",
-      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "schematics": {},
       "architect": {
         "build": {
           "builder": "@angular/build:application",
@@ -24,23 +25,13 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.css"
-            ]
+            "styles": ["src/styles.css"]
           },
           "configurations": {
             "production": {
               "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
-                }
+                { "type": "initial", "maximumWarning": "500kB", "maximumError": "1MB" },
+                { "type": "anyComponentStyle", "maximumWarning": "4kB", "maximumError": "8kB" }
               ],
               "outputHashing": "all"
             },
@@ -55,11 +46,38 @@
         "serve": {
           "builder": "@angular/build:dev-server",
           "configurations": {
+            "production": { "buildTarget": "domasnaproekt:build:production" },
+            "development": { "buildTarget": "domasnaproekt:build:development" }
+          },
+          "defaultConfiguration": "development"
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/domasnaproekt/server",
+            "main": "src/main.server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": { "optimization": true, "sourceMap": false },
+            "development": { "optimization": false, "sourceMap": true }
+          },
+          "defaultConfiguration": "development"
+        },
+        "serve-ssr": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "domasnaproekt:build",
+            "serverTarget": "domasnaproekt:server"
+          },
+          "configurations": {
             "production": {
-              "buildTarget": "domasnaproekt:build:production"
+              "browserTarget": "domasnaproekt:build:production",
+              "serverTarget": "domasnaproekt:server:production"
             },
             "development": {
-              "buildTarget": "domasnaproekt:build:development"
+              "browserTarget": "domasnaproekt:build:development",
+              "serverTarget": "domasnaproekt:server:development"
             }
           },
           "defaultConfiguration": "development"
