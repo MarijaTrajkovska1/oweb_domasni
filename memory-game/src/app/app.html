@@ -1,0 +1,21 @@
+<h1>Memory Game</h1>
+
+<p>Moves: {{ moves }}</p>
+<p *ngIf="bestScore !== null">
+   Best score: {{ bestScore }}
+</p>
+<div class="grid">
+  <div
+    class="card"
+    *ngFor="let card of cards"
+    (click)="flipCard(card)"
+    [class.flipped]="card.isFlipped || card.isMatched"
+  >
+    <span *ngIf="card.isFlipped || card.isMatched">
+      {{ card.value }}
+    </span>
+  </div>
+</div>
+
+<button (click)="restart()">Restart</button>
+

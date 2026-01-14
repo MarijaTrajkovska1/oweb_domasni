@@ -1,0 +1,46 @@
+h1 {
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 80px);
+  gap: 10px;
+  justify-content: center;
+  margin: 20px;
+}
+
+.card {
+  width: 80px;
+  height: 80px;
+  background:lightcyan;
+  color: white;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 8px;
+  user-select: none;
+}
+
+.card.flipped {
+  background: lightpink;
+  color: black;
+}
+
+.card:hover{
+  background-color: lavender;
+}
+
+button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color:aquamarine;
+}
+button:hover{
+  background-color: lightgreen;
+}
